@@ -41,41 +41,20 @@ class _UIMainState extends State<UIMain>
       (
         children: <Widget>
         [
-          new Container
-          (
-            margin: new EdgeInsets.only(top: 32.0, bottom: 32.0),
-            child: new Column
-            (
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>
-              [
-                new CircleAvatar
-                (
-                  radius: 64.0,
-                  backgroundImage: new AssetImage("res/me.jpg"),
-                ),
-                new Container
-                (
-                  margin: new EdgeInsets.only(top: 16.0),
-                  child: new Text("Ivascu Adrian", style: Theme.of(context).textTheme.title, textScaleFactor: 1.4),
-                ),
-              ],
-            ),
-          ),
+          new UIManagement().appBar,
           new FlatButton
           (
             onPressed: () { Navigator.pop(context); setState(() => _actualScreen = 0); },
             child: new ListTile
             (
-              leading: new Icon(Icons.card_giftcard),
+              leading: new Icon(Icons.list),
               title: new Row
               (
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>
                 [
-                  new Text("My gift cards"),
+                  new Text("Products list"),
                   new Container
                   (
                     margin: new EdgeInsets.only(left: 8.0),
@@ -90,8 +69,8 @@ class _UIMainState extends State<UIMain>
             onPressed: () { Navigator.pop(context); setState(() => _actualScreen = 1); },
             child: new ListTile
             (
-              leading: new Icon(Icons.autorenew),
-              title: new Text("Pending gift cards"),
+              leading: new Icon(Icons.web),
+              title: new Text("Website management"),
             ),
           ),
           new FlatButton
